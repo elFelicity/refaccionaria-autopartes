@@ -1,0 +1,253 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+	body {
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	background: #2d343d;
+	color:#fff;
+}
+
+a {
+	text-decoration: none;
+	color:#B8711B;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.contenedor {
+	max-width: 1100px;
+	width: 90%;
+	margin: auto;
+}
+
+.titulo {
+	font-weight: 500;
+	color: #FFFFFF;
+	text-align: center;
+	margin: 30px 0 30px 0;
+}
+
+.border {
+	border:none;
+	margin-bottom: 5px;
+	border-top:10px solid #b20000;
+	background: none;
+	color:none;
+	border-width: 5px;
+}
+
+.formulario {
+	background: #2d343d;
+	padding: 30px;
+	margin-bottom: 30px;
+}
+
+.formulario .form-group {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.formulario .esconder {
+	display: none;
+}
+
+.formulario input[type="text"],
+.formulario input[type="password"] {
+	padding: 15px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	line-height: 18px;
+	border: none;
+	vertical-align: top;
+}
+
+.formulario .icono {
+	padding: 15px;
+	text-align: center;
+	width: 48px;
+	max-height: 48px
+	font-size: 18px;
+	line-height: 18px;
+	background: #c8c8c8;
+	display: inline-block;
+	color:#6b6b6b;
+	vertical-align: middle;
+}
+
+.formulario .icono.izquierda {
+	margin-right: 4px;
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	-ms-border-radius: 3px 0 0 3px;
+	-o-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+
+.formulario .usuario,
+.formulario .password {
+	width: calc(100% - 52px);
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-ms-border-radius: 0 3px 3px 0;
+	-o-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+
+.formulario .fecha {
+	width: 10%;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-ms-border-radius: 0 3px 3px 0;
+	-o-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+
+.formulario .password_btn {
+	width: calc(100% - 105px);
+}
+
+.formulario .error ul {
+	padding: 0 15px;
+}
+
+.formulario .error ul li {
+	margin-bottom: 10px;
+}
+
+.formulario .submit-btn {
+	padding: 15px;
+	text-align: center;
+	width: 48px;
+	max-height: 48px
+	font-size: 18px;
+	line-height: 18px;
+	background: #679863;
+	display: inline-block;
+	color:#fff;
+	background: #FFA500;
+	cursor: pointer;
+
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-ms-border-radius: 0 3px 3px 0;
+	-o-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+
+.formulario .submit-pac {
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-ms-border-radius: 0 3px 3px 0;
+	-o-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+
+	width: 100%;
+  height: 50px;
+  padding: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #f0776c;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: 0px;
+}
+
+.formulario .submit-pac-si {
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-ms-border-radius: 0 3px 3px 0;
+	-o-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+
+	width: 100%;
+  height: 50px;
+  padding: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #ff2a2a;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: 0px;
+}
+
+.formulario .submit-pac-no {
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-ms-border-radius: 0 3px 3px 0;
+	-o-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+
+	width: 100%;
+  height: 50px;
+  padding: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #635ee7;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: 0px;
+}
+
+.formulario .submit-btn:hover {
+	background: #E64A11;
+}
+
+.formulario .submit-pac:hover {
+	background: #E64A19;
+}
+
+.texto-registrate {
+	text-align: center;
+}
+
+.texto-registrate a {
+	display: block;
+	font-size: 18px;
+	color: #a9bddf;
+}
+
+.contenido article {
+	padding: 30px;
+	background: #fff;
+}
+
+.contenido article p{
+	margin-bottom: 10px;
+	color:#000;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+    width: 100%;
+ }
+
+ img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+.cerrar {
+	color: #a9bddf;
+}
