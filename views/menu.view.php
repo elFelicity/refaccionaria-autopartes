@@ -15,7 +15,6 @@
 		<a class="cerrar"href="cerrar.php">Cerrar Sesion</a>
 		<hr class="border">
 		<h1 class="titulo">Proveedores</h1>
-
 			<p class="texto-registrate">
 				<a href="nuevo_proveedor.php"> Registrar Nuevo Proveedor</a>
 			</p>
@@ -31,6 +30,23 @@
 			<p class="texto-registrate">
 				<a href="eliminar_proveedor.php"> Eliminar Proveedor </a>
 			</p>
+
+			<h1 class="titulo">Marcas</h1>
+				<p class="texto-registrate">
+					<a href="nueva_marca.php"> Registrar Nueva Nueva </a>
+				</p>
+				<p class="texto-registrate">
+					<a href="mostrar_marcas.php"> Mostrar Marcas </a>
+				</p>
+				<p class="texto-registrate">
+					<a href="buscar_marca.php"> Buscar Marca </a>
+				</p>
+				<p class="texto-registrate">
+					<a href="modificar_marca.php"> Modificar Marca </a>
+				</p>
+				<p class="texto-registrate">
+					<a href="eliminar_marca.php"> Eliminar Marca </a>
+				</p>
 
 	</div>
 </body>

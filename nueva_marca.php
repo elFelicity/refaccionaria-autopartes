@@ -4,14 +4,10 @@ if (isset($_SESSION['usuario'])) {
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$nombre =filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
-		$telefono =filter_var($_POST['telefono'], FILTER_SANITIZE_STRING);
-		$direccion =filter_var($_POST['direccion'], FILTER_SANITIZE_STRING);
-		$correo = filter_var($_POST['correo'], FILTER_SANITIZE_STRING);
+		$descripcion =filter_var($_POST['descripcion'], FILTER_SANITIZE_STRING);
 		$errores = '';
 
-
-
-		if (empty($nombre) or empty($telefono) or empty($direccion) or empty($correo)) {
+		if (empty($nombre) or empty($descripcion)) {
 			$errores .= '<li>Por favor rellena todos los datos correctamente</li>';
 		}else{
 			try{
@@ -22,13 +18,13 @@ if (isset($_SESSION['usuario'])) {
 			}
 		}
 		if ($errores == '') {
-			$statement = $conexion->prepare('INSERT INTO proveedores (id_proveedor,nombre,telefono,direccion,correo) VALUES (null,:nombre,:telefono,:direccion,:correo)');
-			$statement->execute(array(':nombre'=>$nombre,':telefono'=>$telefono,':direccion'=>$direccion,':correo'=>$correo));
+			$statement = $conexion->prepare('INSERT INTO marcas (id_marca,nombre_marca,descripcion) VALUES (null,:nombre,:descripcion)');
+			$statement->execute(array(':nombre'=>$nombre,':descripcion'=>$descripcion));
 			header('Location: menu.php');
 		}
 	}
 
-	require 'views/nuevo_proveedor.view.php';
+	require 'views/nueva_marca.view.php';
 }else{
 	header('Location: login.php');
 }

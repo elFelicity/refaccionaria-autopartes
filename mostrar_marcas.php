@@ -9,11 +9,11 @@ if (isset($_SESSION['usuario'])) {
 	die();
 	}
 
-	$proveedores = $conexion->prepare("SELECT * FROM proveedores");
-	$proveedores->execute();
-	$proveedores = $proveedores->fetchAll();
+	$marcas = $conexion->prepare("SELECT * FROM marcas");
+	$marcas->execute();
+	$marcas = $marcas->fetchAll();
 
-	require 'views/mostrar_proveedores.view.php';
+	require 'views/mostrar_marcas.view.php';
 }else{
 	header('Location: login.php');
 }
