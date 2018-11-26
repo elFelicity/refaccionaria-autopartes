@@ -69,7 +69,7 @@ if (isset($_SESSION['usuario'])) {
           $errores .= '<li>En esa ubicación ya existe un artículo con una descripción distinta</li>';
         }
 		    }
-        
+
         $marcas = $conexion->prepare('SELECT * FROM marcas');
         $marcas->execute();
       	$marcas = $marcas->fetchAll();

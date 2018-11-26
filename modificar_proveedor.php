@@ -98,7 +98,7 @@ if (isset($_SESSION['usuario'])) {
 			if(isset($_POST['id_proveedor']) && $_POST['id_proveedor'] != ''){
 				$id_proveedor = $_POST['id_proveedor'];
 			}
-			$statement = $conexion2->prepare('SELECT * FROM proveedores WHERE id_proveedor = :id LIMIT 1');
+			$statement = $conexion->prepare('SELECT * FROM proveedores WHERE id_proveedor = :id LIMIT 1');
 			$statement->execute(array(':id' => $id_proveedor));
 			$resultado = $statement->fetch();
 		}

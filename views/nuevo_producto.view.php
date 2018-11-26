@@ -40,25 +40,29 @@
         <option value="NULL" selected> Edificio en el que se Encuentra </option>
         <option value="MOSTRADOR"> Mostrador </option>
         <option value="BODEGA"> Bodega </option>
+			</div>
       </select>
       <div class="form-group">
 				<i class="icono izquierda fa fa-list-ol"></i><input type="number" name="ubicacion_pasi" min="0" max="100"><label>     Pasillo</label>
-			</div><div class="form-group">
+			</div>
+			<div class="form-group">
 				<i class="icono izquierda fa fa-list-ol"></i><input type="number" name="ubicacion_ana" min="0" max="100"><label>     Anaquel</label>
-			</div><div class="form-group">
+			</div>
+			<div class="form-group">
 				<i class="icono izquierda fa fa-list-ol"></i><input type="number" name="ubicacion_charo" min="0" max="100"><label>     Charola</label>
 			</div>
-      </div>
-
 			<input type="submit" name="submit" class="submit-pac" value="Registrar">
-			<?php if(!empty($errores)): ?>
-				<div class="error">
-					<ul>
-						<?php echo $errores; ?>
-					</ul>
-				</div>
-			<?php endif;?>
+
 		</form>
+
+		<?php if(!empty($errores)): ?>
+			<div class="error">
+				<ul>
+					<?php echo $errores; ?>
+				</ul>
+			</div>
+		<?php endif;?>
+
 		<p class="texto-registrate">
 			<a href="menu.php">Regresar a Menu Principal</a>
 		</p>
