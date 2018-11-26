@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
 	$errores = '';
  
-	if (empty($usuario) or empty($password) or empty($password2) ) {
+	if (empty($usuario) or empty($password) or empty($password2) or empty($adminPass) or empty($adminUser) ) {
 		$errores .= '<li>Por favor rellena todos los campos</li>';
 	}else{
 		try{
@@ -34,19 +34,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 		$password = hash('sha512', $password);
 		$password2 = hash('sha512', $password2);
+        $adminPass = hash('sha512', $adminPass);
 
 		if($password != $password2){
 			$errores .= '<li>Las contraseñas no son iguales</li>';
 		}
         
         $tipo='ADMN';
-        $statement = $conexion->prepare('SELECT * FROM usuarios WHERE usuario = :usuario AND contrasena= :contrasena AND tipo_empleado= :tipo LIMIT 1');
-		$statement->execute(array(':usuario' => $adminUser, 'contrasena'=>$adminPass, ':tipo'=>$tipo));
-		$resultadoAdmin = $statement->fetch();
-        if ($resultadoAdmin != false) {
-			$errores .= '<li>Permiso denegado, error de autenticacion de administrador</li>';
-		}
-        
+        $res = $conexion->prepare('SELECT * FROM usuarios');
+        $res->execute();
+        $res = $res->fetchAll();
+        $encontrado=false;
+        foreach ($res as $elemento) {
+          if(($elemento['usuario'] == $adminUser) and ($elemento['contrasena'] == $adminPass) and ($elemento['tipo_empleado'] == $tipo)){
+              $encontrado=true;
+          }
+        }
+        if($encontrado==false)
+        {
+            $errores .= '<li>Error de autenticacion de usuario que otorga el permiso</li>';
+        }
 	}
 	if ($errores == '') {
         
