@@ -14,6 +14,24 @@
 		<h1 class="titulo"><img src="images/autopartes.png" alt="logo"> </h1>
 		<a class="cerrar"href="cerrar.php">Cerrar Sesion</a>
 		<hr class="border">
+
+		<h1 class="titulo">Productos</h1>
+			<p class="texto-registrate">
+				<a href="nuevo_producto.php"> Registrar Nuevo Producto </a>
+			</p>
+			<p class="texto-registrate">
+				<a href="mostrar_productos.php"> Mostrar Productos </a>
+			</p>
+			<p class="texto-registrate">
+				<a href="buscar_producto.php"> Buscar Productos </a>
+			</p>
+			<p class="texto-registrate">
+				<a href="modificar_producto.php"> Modificar Producto </a>
+			</p>
+			<p class="texto-registrate">
+				<a href="eliminar_producto.php"> Eliminar Producto </a>
+			</p>
+
 		<h1 class="titulo">Proveedores</h1>
 			<p class="texto-registrate">
 				<a href="nuevo_proveedor.php"> Registrar Nuevo Proveedor</a>

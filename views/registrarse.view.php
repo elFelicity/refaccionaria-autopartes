@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" class="login" name="login" method="post"  onsubmit="return validacion();">
+	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" class="login" name="login" method="post">
 				<img id="imagen" src="images/autopartes.png">
 		<h1 class="login-title">Registro</h1>
 		<input type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario" class="login-input" autofocus><br>
