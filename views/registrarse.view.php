@@ -24,7 +24,14 @@
 		<a class="url-registrate" href="login.php">Inicia Sesión</a>
 	</p>
 
-</body>
+	<?php if(!empty($errores)): ?>
+		<div class="error">
+			<ul>
+				<?php echo $errores; ?>
+			</ul>
+		</div>
+	<?php endif;?>
 
 </body>
+
 </html>

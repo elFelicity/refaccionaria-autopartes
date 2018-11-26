@@ -16,6 +16,15 @@
 		<input type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario" class="login-input" autofocus><br>
 		<input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" class="login-input"><br>
 		<input type="submit" value="Acceder" class="login-button">
+
+		<?php if(!empty($errores)): ?>
+			<div class="error">
+				<ul>
+					<?php echo $errores; ?>
+				</ul>
+			</div>
+		<?php endif;?>
+
 	</form>
 
 	<p class="texto-registrate">

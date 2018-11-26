@@ -54,14 +54,6 @@ if (isset($_SESSION['usuario'])) {
 			//	$errores .= '<li>El numero de isbn ya existe</li>';
 			//} /*
 
-      $marcas = $conexion->prepare('SELECT * FROM marcas');
-      $marcas->execute();
-    	$marcas = $marcas->fetchAll();
-
-      $proveedores = $conexion->prepare('SELECT * FROM proveedores');
-      $proveedores->execute();
-    	$proveedores = $proveedores->fetchAll();
-
       $productos = $conexion->prepare('SELECT * FROM productos');
       $productos->execute();
     	$productos = $productos->fetchAll();
@@ -77,12 +69,20 @@ if (isset($_SESSION['usuario'])) {
           $errores .= '<li>En esa ubicación ya existe un artículo con una descripción distinta</li>';
         }
 		    }
+        
+        $marcas = $conexion->prepare('SELECT * FROM marcas');
+        $marcas->execute();
+      	$marcas = $marcas->fetchAll();
 
         foreach ($marcas as $marca) {
           if($marca['id_marca'] != $id_marca){
             $errores .= '<li>El ID de esa Marca no existe</li>';
           }
         }
+
+        $proveedores = $conexion->prepare('SELECT * FROM proveedores');
+        $proveedores->execute();
+        $proveedores = $proveedores->fetchAll();
 
         foreach ($proveedores as $proveedor) {
           if($proveedor['id_proveedor'] != $id_proveedor){
