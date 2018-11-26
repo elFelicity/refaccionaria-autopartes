@@ -8,9 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$usuario =filter_var(strtolower($_POST['usuario']), FILTER_SANITIZE_STRING);
 	$password = $_POST['contrasena'];
 	$password2 = $_POST['contrasena2'];
-
+    $seleccion = $_POST['seleccion'];
+    
+    $adminPass= $_POST['adminPass'];
+    $adminUser= $_POST['adminUser'];
+    
 	$errores = '';
-
+ 
 	if (empty($usuario) or empty($password) or empty($password2) ) {
 		$errores .= '<li>Por favor rellena todos los campos</li>';
 	}else{
@@ -34,10 +38,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		if($password != $password2){
 			$errores .= '<li>Las contraseñas no son iguales</li>';
 		}
+        
+        $tipo='ADMN';
+        $statement = $conexion->prepare('SELECT * FROM usuarios WHERE usuario = :usuario AND contrasena= :contrasena AND tipo_empleado= :tipo LIMIT 1');
+		$statement->execute(array(':usuario' => $adminUser, 'contrasena'=>$adminPass, ':tipo'=>$tipo));
+		$resultadoAdmin = $statement->fetch();
+        if ($resultadoAdmin != false) {
+			$errores .= '<li>Permiso denegado, error de autenticacion de administrador</li>';
+		}
+        
 	}
 	if ($errores == '') {
-		$statement = $conexion->prepare('INSERT INTO usuarios (id_usuario,usuario,contrasena) VALUES (null,:usuario,:password)');
-		$statement->execute(array(':usuario'=> $usuario,':password'=> $password));
+        
+		$statement = $conexion->prepare('INSERT INTO usuarios (id_usuario,usuario,contrasena,tipo_empleado) VALUES (null,:usuario,:password,:seleccion)');
+		$statement->execute(array(':usuario'=> $usuario,':password'=> $password,':seleccion'=>$seleccion));
 
 		header('Location: login.php');
 	}
