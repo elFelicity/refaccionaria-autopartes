@@ -59,12 +59,12 @@
     			<div class="form-group">
     				<i class="icono izquierda fa fa-envelope"></i><input type="text" name="stock2" class="usuario" placeholder="Nuevo Número de Productos en Existencia">
     			</div>
-          <div class="form-group">
+          <!--<div class="form-group">
             <i class="icono izquierda fa fa-envelope"></i><input type="text" name="id_marca2" class="usuario" placeholder="Nuevo Identificador de la Marca">
           </div>
           <div class="form-group">
             <i class="icono izquierda fa fa-envelope"></i><input type="text" name="id_proveedor2" class="usuario" placeholder="Nuevo Identificador del Proveedor">
-          </div>
+          </div>-->
           <div class="form-group">
             <i class="icono izquierda fa fa-envelope"></i><input type="text" name="costo2" class="usuario" placeholder="Nuevo Costo">
           </div>

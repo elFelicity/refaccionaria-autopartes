@@ -37,7 +37,7 @@
       </div>
       <div class="form-group">
         <select class="usuario" name="ubicacion_edi">
-        <option value="NULL" selected> Edificio en el que se Encuentra </option>
+        <option selected> Edificio en el que se Encuentra </option>
         <option value="MOSTRADOR"> Mostrador </option>
         <option value="BODEGA"> Bodega </option>
 			</div>

@@ -80,7 +80,7 @@ if (isset($_SESSION['usuario'])) {
           }
         }
 
-        $proveedores = $conexion->prepare('SELECT * FROM proveedores');
+/*        $proveedores = $conexion->prepare('SELECT * FROM proveedores');
         $proveedores->execute();
         $proveedores = $proveedores->fetchAll();
 
@@ -89,7 +89,7 @@ if (isset($_SESSION['usuario'])) {
             $errores .= '<li>El ID de ese Proveedor no existe</li>';
           }
         }
-
+*/
   }
 		if ($errores == '') {
 		  $statement = $conexion->prepare('INSERT INTO productos (codigo_barras,numero_pieza,descripcion,stock,id_marca,id_proveedor,costo,ubicacion_edificio,ubicacion_pasillo,ubicacion_anaquel,ubicacion_charola) VALUES (:codigo_barras,:numero_pieza,:descripcion,:stock,:id_marca,:id_proveedor,:costo,:ubicacion_edificio,:ubicacion_pasillo,:ubicacion_anaquel,:ubicacion_charola)');
