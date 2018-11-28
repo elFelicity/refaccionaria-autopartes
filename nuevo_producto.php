@@ -73,23 +73,32 @@ if (isset($_SESSION['usuario'])) {
         $marcas = $conexion->prepare('SELECT * FROM marcas');
         $marcas->execute();
       	$marcas = $marcas->fetchAll();
-
+        
+        $marcaEncontrada=false;
         foreach ($marcas as $marca) {
-          if($marca['id_marca'] != $id_marca){
-            $errores .= '<li>El ID de esa Marca no existe</li>';
+          if($marca['id_marca'] == $id_marca){
+            $marcaEncontrada=true;
           }
         }
-
-/*        $proveedores = $conexion->prepare('SELECT * FROM proveedores');
+        if($marcaEncontrada==false)
+        {
+            $errores .= '<li>El ID de esa Marca no existe</li>';
+        }
+        $proveedores = $conexion->prepare('SELECT * FROM proveedores');
         $proveedores->execute();
         $proveedores = $proveedores->fetchAll();
-
+        
+        $proveedorEncontrado=false;
         foreach ($proveedores as $proveedor) {
-          if($proveedor['id_proveedor'] != $id_proveedor){
-            $errores .= '<li>El ID de ese Proveedor no existe</li>';
+          if($proveedor['id_proveedor'] == $id_proveedor){
+            $proveedorEncontrado=true;
           }
         }
-*/
+            if($proveedorEncontrado==false)
+            {
+                $errores .= '<li>El ID de ese Proveedor no existe</li>';
+            }
+
   }
 		if ($errores == '') {
 		  $statement = $conexion->prepare('INSERT INTO productos (codigo_barras,numero_pieza,descripcion,stock,id_marca,id_proveedor,costo,ubicacion_edificio,ubicacion_pasillo,ubicacion_anaquel,ubicacion_charola) VALUES (:codigo_barras,:numero_pieza,:descripcion,:stock,:id_marca,:id_proveedor,:costo,:ubicacion_edificio,:ubicacion_pasillo,:ubicacion_anaquel,:ubicacion_charola)');

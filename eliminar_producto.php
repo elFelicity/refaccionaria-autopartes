@@ -3,7 +3,7 @@
 if (isset($_SESSION['usuario'])) {
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		$descripcion = $_POST['descripcion'];
+        $descripcion =filter_var($_POST['descripcion'], FILTER_SANITIZE_STRING);
 		$errores = '';
 
 		if ($_POST['submit'] == 'SI') {
