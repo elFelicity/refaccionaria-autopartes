@@ -9,6 +9,16 @@
 	<title>Menu</title>
 </head>
 <body>
+
+	<?php if($_SESSION['tipo'] == 'ADMN') : ?>
+	<a class="cerrar" href="exportar.php">Exportar Base de Datos</a>
+	<br><br>
+	<a class="cerrar" href="importar.php">Importar Base de Datos</a>
+	<br><br><hr><br>
+	<?php endif; ?>
+
+
+
 	<div class="contenedor">
 		<h1 class="titulo">Autopartes Americanas Eloy</h1>
 		<h1 class="titulo"><img src="images/autopartes.png" alt="logo"> </h1>

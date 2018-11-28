@@ -30,6 +30,7 @@ if (isset($_SESSION['usuario'])) {
 			}
 		}
 
+				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 
         $productos = $conexion->prepare('SELECT * FROM productos');
         $productos->execute();

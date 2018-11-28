@@ -6,9 +6,11 @@ if (isset($_SESSION['usuario'])) {
 
 $errores = '';
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$usuario =filter_var(strtolower($_POST['usuario']), FILTER_SANITIZE_STRING);
 	$password = $_POST['contrasena'];
+
 	$password = hash('sha512', $password);
 
 	try{
@@ -27,6 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	));
 
 	$resultado = $statement->fetch();
+
+	$_SESSION['tipo'] = $resultado['tipo_empleado'];
+
 
 	if ($resultado != false) {
 		$_SESSION['usuario'] = $usuario;
