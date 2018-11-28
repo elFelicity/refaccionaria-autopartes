@@ -46,7 +46,8 @@ echo '<script language="javascript">';
 echo 'alert("Respaldo Exitoso")';
 echo '</script>';
 
-location.replace("menu.php");
 
-
+echo '<script language="javascript">';
+echo 'location.replace("menu.php");';
+echo '</script>';
  ?>

@@ -18,6 +18,14 @@ foreach ($sql as $query) {
 }
 
 fclose($abrir);
-echo "¡¡Exito al importar!!";
+
+echo '<script language="javascript">';
+echo 'alert("Exito al importar")';
+echo '</script>';
+
+
+echo '<script language="javascript">';
+echo 'location.replace("menu.php");';
+echo '</script>';
 
  ?>
