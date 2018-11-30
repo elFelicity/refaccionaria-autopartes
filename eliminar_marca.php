@@ -8,8 +8,8 @@ if (isset($_SESSION['usuario'])) {
 
 		if ($_POST['submit'] == 'SI') {
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}
@@ -25,8 +25,8 @@ if (isset($_SESSION['usuario'])) {
 			$errores .= '<li>Por favor ingresa el ID de la marca que desea eliminar</li>';
 			}else{
 				try{
-					//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-					$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+					$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+					//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 				}catch(PDOException $e){
 					echo "Error: " . $e->getMessage();
 				}

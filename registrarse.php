@@ -9,18 +9,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$password = $_POST['contrasena'];
 	$password2 = $_POST['contrasena2'];
     $seleccion = $_POST['seleccion'];
-    
+
     $adminPass= $_POST['adminPass'];
     $adminUser= $_POST['adminUser'];
-    
+
 	$errores = '';
- 
+
 	if (empty($usuario) or empty($password) or empty($password2) or empty($adminPass) or empty($adminUser) ) {
 		$errores .= '<li>Por favor rellena todos los campos</li>';
 	}else{
 		try{
-			//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-			$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+			$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+			//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 		}catch(PDOException $e){
 			echo "Error: " . $e->getMessage();
 		}
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		if($password != $password2){
 			$errores .= '<li>Las contraseñas no son iguales</li>';
 		}
-        
+
         $tipo='ADMN';
         $res = $conexion->prepare('SELECT * FROM usuarios');
         $res->execute();
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 	}
 	if ($errores == '') {
-        
+
 		$statement = $conexion->prepare('INSERT INTO usuarios (id_usuario,usuario,contrasena,tipo_empleado) VALUES (null,:usuario,:password,:seleccion)');
 		$statement->execute(array(':usuario'=> $usuario,':password'=> $password,':seleccion'=>$seleccion));
 

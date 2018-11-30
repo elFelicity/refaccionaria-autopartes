@@ -15,8 +15,8 @@ if (isset($_SESSION['usuario'])) {
 			$errores .= '<li>Por favor ingresa el ID de un Proveedor</li>';
 		}else if(isset($id_proveedor)){
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}
@@ -33,8 +33,8 @@ if (isset($_SESSION['usuario'])) {
 		if (isset($_POST['nombre2']) && $_POST['nombre2'] != '') {
 			$nombre2 = filter_var($_POST['nombre2'], FILTER_SANITIZE_STRING);;
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}
@@ -48,8 +48,8 @@ if (isset($_SESSION['usuario'])) {
 		if (isset($_POST['telefono2']) && $_POST['telefono2'] != '') {
 			$telefono2 = filter_var($_POST['telefono2'], FILTER_SANITIZE_STRING);;
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}
@@ -62,8 +62,8 @@ if (isset($_SESSION['usuario'])) {
 		if (isset($_POST['direccion2']) && $_POST['direccion2'] != '') {
 			$direccion2 = filter_var($_POST['direccion2'], FILTER_SANITIZE_STRING);;
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}
@@ -76,8 +76,8 @@ if (isset($_SESSION['usuario'])) {
 		if (isset($_POST['correo2']) && $_POST['correo2'] != '') {
 			$correo2 = filter_var($_POST['correo2'], FILTER_SANITIZE_STRING);;
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}
@@ -89,8 +89,8 @@ if (isset($_SESSION['usuario'])) {
 
 		if ($cambio == true) {
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}

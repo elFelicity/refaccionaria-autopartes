@@ -25,8 +25,8 @@ if (isset($_SESSION['usuario'])) {
   //    $consulta ="SELECT id_marca FROM marcas ORDER BY id_marca ASC";
   //    $resulProd = mysql_query($consulta);
 			try{
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
-        ///$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+        $conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
       }
@@ -73,7 +73,7 @@ if (isset($_SESSION['usuario'])) {
         $marcas = $conexion->prepare('SELECT * FROM marcas');
         $marcas->execute();
       	$marcas = $marcas->fetchAll();
-        
+
         $marcaEncontrada=false;
         foreach ($marcas as $marca) {
           if($marca['id_marca'] == $id_marca){
@@ -87,7 +87,7 @@ if (isset($_SESSION['usuario'])) {
         $proveedores = $conexion->prepare('SELECT * FROM proveedores');
         $proveedores->execute();
         $proveedores = $proveedores->fetchAll();
-        
+
         $proveedorEncontrado=false;
         foreach ($proveedores as $proveedor) {
           if($proveedor['id_proveedor'] == $id_proveedor){

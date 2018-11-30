@@ -1,6 +1,7 @@
 <?php
 
-$conexion = mysqli_connect('localhost','root','','prueba_backup');
+//$conexion = mysqli_connect('localhost','root','','prueba_backup');
+$conexion = mysqli_connect('localhost','id7665311_admin','admin','id7665311_test	')
 
 $nombreArchivo = 'respaldoRefaccionaria.sql';
 

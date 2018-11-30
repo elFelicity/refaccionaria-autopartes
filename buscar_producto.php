@@ -10,8 +10,8 @@ if (isset($_SESSION['usuario'])) {
 			$errores .= '<li>Por favor ingrese la descripción del Producto</li>';
 		}else{
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}

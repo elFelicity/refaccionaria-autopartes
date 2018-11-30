@@ -1,6 +1,6 @@
 <?php
-$conexion = mysqli_connect('localhost','root','','refaccionaria');
-
+//$conexion = mysqli_connect('localhost','root','','refaccionaria');
+$conexion = mysqli_connect('localhost','id7665311_root','admin','id7665311_refaccionaria')
 $tablas = array();
 $resultado = mysqli_query($conexion, "SHOW TABLES");
 while ($row = mysqli_fetch_row($resultado)) {

@@ -15,8 +15,8 @@ if (isset($_SESSION['usuario'])) {
 			$errores .= '<li>Por favor ingresa el ID de la Marca</li>';
 		}else if(isset($id_marca)){
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}
@@ -33,8 +33,8 @@ if (isset($_SESSION['usuario'])) {
 		if (isset($_POST['nombre2']) && $_POST['nombre2'] != '') {
 			$nombre2 = filter_var($_POST['nombre2'], FILTER_SANITIZE_STRING);;
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}
@@ -48,8 +48,8 @@ if (isset($_SESSION['usuario'])) {
 		if (isset($_POST['descripcion2']) && $_POST['descripcion2'] != '') {
 			$descripcion2 = filter_var($_POST['descripcion2'], FILTER_SANITIZE_STRING);;
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}
@@ -61,8 +61,8 @@ if (isset($_SESSION['usuario'])) {
 
 		if ($cambio == true) {
 			try{
-				//$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
-				$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
+				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 			}catch(PDOException $e){
 				echo "Error: " . $e->getMessage();
 			}
