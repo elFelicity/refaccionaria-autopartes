@@ -32,7 +32,7 @@ if (isset($_SESSION['usuario'])) {
 				$conexion = new PDO('mysql:host=localhost;dbname=id7665311_refaccionaria','id7665311_root','admin');
 				//$conexion = new PDO('mysql:host=localhost;dbname=refaccionaria','root','');
 
-        $productos = $conexion->prepare('SELECT * FROM productos');
+      /*  $productos = $conexion->prepare('SELECT * FROM productos');
         $productos->execute();
         $productos = $productos->fetchAll();
 
@@ -49,7 +49,43 @@ if (isset($_SESSION['usuario'])) {
           if(($ubicacionElemento == $ubicacionPost) and ($elemento['descripcion'] != $_POST['descripcion2'])){
             $errores .= '<li>En esa ubicación ya existe un artículo con una descripcion distinta</li>';
           }
-          }
+				}*/
+
+				if(
+				    	(isset($_POST['ubicacion_edi2']) && $_POST['ubicacion_edi2'] != '') AND
+				      (isset($_POST['ubicacion_pasi2']) && $_POST['ubicacion_pasi2'] != '') AND
+				      (isset($_POST['ubicacion_ana2']) && $_POST['ubicacion_ana2'] != '') AND
+				      (isset($_POST['ubicacion_charo2']) && $_POST['ubicacion_charo2'] != '')
+				            )
+				{
+				            $productos = $conexion->prepare('SELECT * FROM productos');
+				            $productos->execute();
+				            $productos = $productos->fetchAll();
+
+				            $ubicacionEdi2 = $_POST['ubicacion_edi2'];
+				            $ubicacionPasi2 = $_POST['ubicacion_pasi2'];
+				            $ubicacion_ana2 = $_POST['ubicacion_ana2'];
+				            $ubicacion_charo2 = $_POST['ubicacion_charo2'];
+				            $numPieza = $_POST['num_pieza2'];
+
+				            $ubicacionPost ='';
+				            $ubicacionPost .= $ubicacionEdi2;
+				            $ubicacionPost .= $ubicacionPasi2;
+				            $ubicacionPost .= $ubicacion_ana2;
+				            $ubicacionPost .= $ubicacion_charo2;
+
+				            $ubicacionElemento='';
+				            foreach ($productos as $elemento) {
+				              $ubicacionElemento .= $elemento['ubicacion_edificio'];
+				              $ubicacionElemento .= $elemento['ubicacion_pasillo'];
+				              $ubicacionElemento .= $elemento['ubicacion_anaquel'];
+				              $ubicacionElemento .= $elemento['ubicacion_charola'];
+				                  if(($ubicacionElemento == $ubicacionPost) and ($elemento['numero_pieza'] != $numPieza)){
+				                    $errores .= '<li>En esa ubicación ya existe un artículo con un número de pieza distinto</li>';
+				                  }
+				              }
+				}
+
 
         }
 if ($errores == "") {
